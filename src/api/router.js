@@ -3,6 +3,6 @@ import predictionController from './controller';
 
 const router = express.Router();
 
-router.get('/', predictionController.mainResponse);
+router.get('/api/:text', predictionController.mainResponse);
 
 export default router;
