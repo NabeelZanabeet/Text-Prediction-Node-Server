@@ -14,6 +14,9 @@ let findClosest = (cursor, elements, orderedArray) => {
 
 class PredictionController {
 
+  mainPage(req, res) {
+    res.send('hello')
+  }
   mainResponse(req, res) {
     const text = req.params.text
     const cursorPosition = req.params.cursorPosition
