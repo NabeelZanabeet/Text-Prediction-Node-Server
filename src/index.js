@@ -2,6 +2,7 @@ import express from 'express';
 import router from './api/router';
 
 const app = express();
+const PORT = process.env.PORT || 8000
 
 const allowCrossDomain = function(req, res, next) {
   res.header('Access-Control-Allow-Origin', "*");
@@ -17,6 +18,6 @@ app.get('/h', (req, res) => {
   res.status(200).json({ message: 'Welcome to Node.js & Express' });
 });
 
-app.listen(8000, () => {
+app.listen(PORT, () => {
   console.log('Example app listening on port 8000!')
 });
