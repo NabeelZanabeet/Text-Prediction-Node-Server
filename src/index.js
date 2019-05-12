@@ -12,6 +12,11 @@ const allowCrossDomain = function(req, res, next) {
 
 app.use(allowCrossDomain);
 app.use(router);
+
+app.get('/h', (req, res) => {
+  res.status(200).json({ message: 'Welcome to Node.js & Express' });
+});
+
 app.listen(8000, () => {
   console.log('Example app listening on port 8000!')
 });
