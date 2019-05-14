@@ -1,4 +1,5 @@
 import predictions from '../../db/Data.json'
+import dictionary from '../../db/Dictionary.json'
 
 let findClosest = (cursor, elements, orderedArray) => {
   if (elements.length === 0) {
@@ -17,7 +18,7 @@ class PredictionController {
   mainPage(req, res) {
     res.send('hello')
   }
-  
+
   mainResponse(req, res) {
     const text = req.params.text
     const cursorPosition = req.params.cursorPosition
@@ -31,7 +32,18 @@ class PredictionController {
       res.send('false')
     }
   }
-  
+
+  dictionary(req, res) {
+    const word = req.params.word
+    let dictionaryList = dictionary.words
+    let results=[];
+    for (let el in dictionaryList) {
+      if (el.substr(0, word.length).toUpperCase() === word.toUpperCase()) {
+        results.push(el);
+      }
+    }
+    res.send(results)
+  }
 }
 
 const predictionController = new PredictionController();
