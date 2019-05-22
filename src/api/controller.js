@@ -16,7 +16,7 @@ let findClosest = (cursor, elements, orderedArray) => {
 class PredictionController {
 
   mainPage(req, res) {
-    res.send('hello')
+    res.send('Express text prediction server is running live ..')
   }
 
   mainResponse(req, res) {
